@@ -1,0 +1,16 @@
+{
+  "name": "css-to-the-rescue-1920",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aaraar/css-to-the-rescue-1920.git",
+  "author": "Bas de Greeuw <bdegreeuw@ziggo.nl>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -cw"
+  },
+  "dependencies": {
+    "rollup": "^1.31.0",
+    "rollup-plugin-scss": "^2.1.0",
+    "rollup-plugin-serve": "^1.0.1"
+  }
+}

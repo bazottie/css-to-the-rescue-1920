@@ -1,0 +1,42 @@
+@import "reset";
+@import "mixins";
+
+body {
+  font-family: Hermetic;
+  font-size: 2rem;
+  background-color: $dark;
+  color: $light;
+  @include breakpoint(dark) {
+    font-family: Roboto;
+  }
+}
+
+header {
+  svg {
+    font-family: Colonia;
+    font-size: 3.5em;
+  }
+
+  text {
+    fill: $light;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    transform: translateY(-3em);
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #50e646, 0 0 40px #50E646, 0 0 50px #50E646, 0 0 60px #50E646, 0 0 70px #50E646;
+
+
+    span {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      direction: ltr;
+      line-height: initial;
+      letter-spacing: -8px;
+    }
+  }
+}
+
+

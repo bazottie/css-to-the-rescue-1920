@@ -1,0 +1,61 @@
+/*********************
+VARIABLES
+*********************/
+
+$dark: #000;
+$light: #fff;
+
+/*********************
+BREAKPOINTS
+*********************/
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media (min-width: 70rem) {
+      @content ;
+    }
+  } @else if $point == laptop {
+    @media (min-width: 64rem) {
+      @content ;
+    }
+  } @else if $point == tablet {
+    @media (min-width: 50rem) {
+      @content ;
+    }
+  } @else if $point == phablet {
+    @media (min-width: 37.5rem) {
+      @content ;
+    }
+  } @else if $point == mobileonly {
+    @media (max-width: 37.5rem) {
+      @content ;
+    }
+  } @else if $point == dark {
+    @media (prefers-color-scheme: dark) {
+      @content ;
+    }
+  }
+  @else if $point == light {
+    @media (prefers-color-scheme: light) {
+      @content ;
+    }
+  }
+}
+
+/*********************
+FONTS
+*********************/
+
+@font-face {
+  font-family: 'Hermetic';
+  src: url('../fonts/hermetic_spellbook/hermeticspellbook.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colonia';
+  src: url('../fonts/colonia_deco/ColoniaDecoDEMO-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

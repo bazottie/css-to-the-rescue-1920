@@ -2,41 +2,178 @@
 @import "mixins";
 
 body {
-  font-family: Hermetic;
-  font-size: 2rem;
+  perspective: 600px;
   background-color: $dark;
-  color: $light;
-  @include breakpoint(dark) {
-    font-family: Roboto;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  a {
+    position: absolute;
+    transform: translate(50%, -50%);
+    top: 50%;
+    right: 50%;
+    display: block;
+    padding: 2em 3em;
+    background-color: #e60073;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    max-width: 7rem;
+    margin: auto auto;
+    transition: 0.3s ease-in;
   }
 }
 
-header {
-  svg {
-    font-family: Colonia;
-    font-size: 3.5em;
+body main, body > section {
+  display: none;
+}
+// I use SASS so that I can nest elements which makes layering the css for different OS settings easier {
+head:target + body{
+  a {
+    opacity: 0;
+  }
+  main {
+    display: block;
+    flex-grow: 1;
+    overflow: auto;
+    z-index: 1;
+    animation: 3s flyin ease-out;
+    font-family: Hermetic;
+    color: $light;
+    @include breakpoint(dark) {
+      font-family: Roboto;
+    }
+    background-color: $dark;
+
+    > header {
+      height: 110vh;
+
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      svg {
+        font-family: Colonia;
+      }
+
+      text {
+        font-size: 7rem;
+        fill: $light;
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      }
+
+      h1 {
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transform: translateY(-3em);
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #50e646, 0 0 40px #50E646, 0 0 50px #50E646, 0 0 60px #50E646, 0 0 70px #50E646;
+        @include breakpoint(small) {
+          font-size: 1.5rem;
+        }
+        @include breakpoint(medium) {
+          font-size: 2rem;
+        }
+        @include breakpoint(large) {
+          font-size: 3rem;
+        }
+      }
+    }
+
+
+    section {
+      border-radius: 50px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 3em;
+      margin: 0 3em 5em;
+      padding: 2em 2em 4em 2em;
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6;
+
+      h3 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+
+      article {
+        display: grid;
+        grid-template-rows: 1.5fr 1fr;
+        grid-template-columns: 5fr 1fr;
+        grid-gap: 0 2em;
+        margin: 0 2em;
+        place-self: center stretch;
+      }
+
+      header, blockquote {
+        text-align: center;
+        display: grid;
+        justify-content: center;
+        justify-items: stretch;
+        place-self: center stretch;
+        grid-gap: 0.5em;
+        grid-template-columns: 1fr;
+
+        p {
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
   }
 
-  text {
-    fill: $light;
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
-  }
+   > section {
+     display: block;
+    &, div {
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
 
-  p {
-    display: flex;
-    justify-content: center;
-    transform: translateY(-3em);
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #50e646, 0 0 40px #50E646, 0 0 50px #50E646, 0 0 60px #50E646, 0 0 70px #50E646;
+    div {
+      background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)),
+      radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: zoom 2s;
+      opacity: 0;
 
+      &:nth-child(1) {
+        background-position: 50% 50%;
+        animation-delay: 0s;
+      }
 
-    span {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      direction: ltr;
-      line-height: initial;
-      letter-spacing: -8px;
+      &:nth-child(2) {
+        background-position: 20% 60%;
+        animation-delay: 0.2s;
+      }
+
+      &:nth-child(3) {
+        background-position: -20% -30%;
+        animation-delay: 0.4s;
+      }
+
+      &:nth-child(4) {
+        background-position: 40% -80%;
+        animation-delay: 0.6s;
+      }
+
+      &:nth-child(5) {
+        background-position: -20% 30%;
+        animation-delay: 1s;
+      }
     }
   }
 }
-
-

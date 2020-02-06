@@ -10,24 +10,24 @@ BREAKPOINTS
 *********************/
 
 @mixin breakpoint($point) {
-  @if $point == desktop {
-    @media (min-width: 70rem) {
+  @if $point == x-large {
+    @media (min-width: 1200px) {
       @content ;
     }
-  } @else if $point == laptop {
-    @media (min-width: 64rem) {
+  } @else if $point == large {
+    @media only screen and (min-width: 1000px) {
       @content ;
     }
-  } @else if $point == tablet {
-    @media (min-width: 50rem) {
+  } @else if $point == medium {
+    @media (min-width: 800px) {
       @content ;
     }
-  } @else if $point == phablet {
-    @media (min-width: 37.5rem) {
+  } @else if $point == small {
+    @media (min-width: 600px) {
       @content ;
     }
-  } @else if $point == mobileonly {
-    @media (max-width: 37.5rem) {
+  } @else if $point == x-small {
+    @media (max-width: 400px) {
       @content ;
     }
   } @else if $point == dark {
@@ -58,4 +58,28 @@ FONTS
   src: url('../fonts/colonia_deco/ColoniaDecoDEMO-Bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+}
+
+@keyframes flyin {
+  0% { transform: translate3d(0, 0, -200000px); }
+  25% { transform: translate3d(0, 0, -200000px); }
+  100%   { transform: translate3d(0, 0, 0); }
+}
+
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in;
+  }
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(5);
+  }
 }

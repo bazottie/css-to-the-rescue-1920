@@ -1,18 +1,17 @@
+[Live Demo](https://aaraar.github.io/css-to-the-rescue-1920)
 # CSS to the Rescue @cmda-minor-web 19-20
 
-_This course is in English_
-
-In this three week course you are going to create an innovative, experimantal, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
+In three weeks I create an innovative, experimental, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
 
 ## Learning goals
-- _You understand the broader scope of CSS: You can show that CSS can be used for more than just styling web pages._
-- _You understand the progressive enhancement parts of CSS: You can show that you can use the cascade, inheritance and specificity in your project_
-- _You understand the interactive parts of CSS: Is the UX fully enhanced within in given CSS scope?_
-- _You have been experimenting: Have the learning goals been stretched?_
-
-[Rubric](https://docs.google.com/spreadsheets/d/1Xv48MSiACNmnM6nXpGGUb8mJDC459uSaxJszO_zLEp8/edit?usp=sharing)
+- _Understanding the broader scope of CSS: You can show that CSS can be used for more than just styling web pages._
+- _Understanding the progressive enhancement parts of CSS: You can show that you can use the cascade, inheritance and specificity in your project_
+- _Understanding the interactive parts of CSS: Is the UX fully enhanced within in given CSS scope?_
+- _Stretching the learning goals as far as possible_
 
 ## Programm
+
+Probeer de uitleg van switchen van OS settings uit te leggen en gebruik de tool misschien als demonstratie hiervoor
 
 ### Week 1 - 👁 C what you did there
 
@@ -45,7 +44,6 @@ Goals: Blow us away.
 <!-- [Slides](https://drive.google.com/open?id=1BSzGYNLMgtHD4HRnK7f0DgyTv4Pg3xsQwD_eYNo7v0Y) -->
 
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
 
 <!-- ☝️ replace this description with a description of your own work -->
 

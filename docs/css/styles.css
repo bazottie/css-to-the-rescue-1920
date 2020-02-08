@@ -66,9 +66,9 @@ FONTS
 
 @keyframes flyin {
   0% {
-    transform: translate3d(0, 0, -200000px); }
-  25% {
-    transform: translate3d(0, 0, -200000px); }
+    transform: translate3d(0, 0, -600000px); }
+  50% {
+    transform: translate3d(0, 0, -600000px); }
   100% {
     transform: translate3d(0, 0, 0); } }
 
@@ -85,60 +85,38 @@ FONTS
     opacity: 0;
     transform: scale(5); } }
 
-body {
-  perspective: 600px;
-  background-color: #000;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; }
-  body a {
-    position: absolute;
-    transform: translate(50%, -50%);
-    top: 50%;
-    right: 50%;
-    display: block;
-    padding: 2em 3em;
-    background-color: #e60073;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    max-width: 7rem;
-    margin: auto auto;
-    transition: 0.3s ease-in; }
-
-body main, body > section {
-  display: none; }
-
-head:target + body a {
-  opacity: 0; }
+@keyframes cubespace {
+  to {
+    transform: translateZ(100000px) rotateY(0deg); } }
 
 head:target + body main {
-  display: block;
+  display: block; }
+
+main {
   flex-grow: 1;
   overflow: auto;
   z-index: 1;
-  animation: 3s flyin ease-out;
+  animation: 5s flyin ease-out;
   font-family: Hermetic;
   color: #fff;
   background-color: #000; }
   @media (prefers-color-scheme: dark) {
-    head:target + body main {
+    main {
       font-family: Roboto; } }
-  head:target + body main > header {
-    height: 110vh; }
-  head:target + body main header {
+  main > header {
+    height: 100vh; }
+  main header {
     display: flex;
     flex-direction: column;
-    align-items: center; }
-    head:target + body main header svg {
+    align-items: center;
+    justify-content: center; }
+    main header svg {
       font-family: Colonia; }
-    head:target + body main header text {
+    main header text {
       font-size: 7rem;
       fill: #fff;
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073; }
-    head:target + body main header h1 {
+    main header h1 {
       font-size: 1rem;
       display: flex;
       align-items: center;
@@ -146,15 +124,15 @@ head:target + body main {
       transform: translateY(-3em);
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #50e646, 0 0 40px #50E646, 0 0 50px #50E646, 0 0 60px #50E646, 0 0 70px #50E646; }
       @media (min-width: 600px) {
-        head:target + body main header h1 {
+        main header h1 {
           font-size: 1.5rem; } }
       @media (min-width: 800px) {
-        head:target + body main header h1 {
+        main header h1 {
           font-size: 2rem; } }
       @media only screen and (min-width: 1000px) {
-        head:target + body main header h1 {
+        main header h1 {
           font-size: 3rem; } }
-  head:target + body main section {
+  main section {
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr;
@@ -162,17 +140,17 @@ head:target + body main {
     margin: 0 3em 5em;
     padding: 2em 2em 4em 2em;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6; }
-    head:target + body main section h3 {
+    main section h3 {
       grid-column-start: 1;
       grid-column-end: 3; }
-    head:target + body main section article {
+    main section article {
       display: grid;
       grid-template-rows: 1.5fr 1fr;
       grid-template-columns: 5fr 1fr;
       grid-gap: 0 2em;
       margin: 0 2em;
       place-self: center stretch; }
-    head:target + body main section header, head:target + body main section blockquote {
+    main section header, main section blockquote {
       text-align: center;
       display: grid;
       justify-content: center;
@@ -180,37 +158,115 @@ head:target + body main {
       place-self: center stretch;
       grid-gap: 0.5em;
       grid-template-columns: 1fr; }
-      head:target + body main section header p, head:target + body main section blockquote p {
+      main section header p, main section blockquote p {
         display: inline-block;
         width: 100%; }
 
 head:target + body > section {
   display: block; }
-  head:target + body > section, head:target + body > section div {
+
+head:target + body > a > div {
+  transition: 5s;
+  animation: cubespace ease-in 20s; }
+
+body {
+  perspective: 1000px;
+  background-color: #000;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+  body > a {
+    position: absolute;
+    transform: translate(10%, -50%);
+    top: 50%;
+    right: 50%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    max-width: 7rem;
+    transition: 0.3s ease-in-out;
+    perspective: 950px; }
+    body > a:hover > div {
+      transform: translateZ(20px); }
+    body > a > div {
+      width: 200px;
+      height: 100px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      transform: translateZ(-100px) rotateY(0deg); }
+      body > a > div div {
+        position: absolute;
+        width: 200px;
+        height: 100px;
+        border: 2px solid black;
+        line-height: 200px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        text-align: center;
+        border-radius: 5px; }
+        body > a > div div p {
+          color: black;
+          font-size: 0.8em;
+          font-family: sans-serif;
+          transform: translateY(-50px); }
+      body > a > div div:nth-of-type(1) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateY(0deg) translateZ(25px); }
+      body > a > div div:nth-of-type(2) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateY(90deg) translateZ(175px);
+        width: 50px; }
+      body > a > div div:nth-of-type(3) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateY(180deg) translateZ(25px); }
+      body > a > div div:nth-of-type(4) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateY(-90deg) translateZ(25px);
+        width: 50px; }
+      body > a > div div:nth-of-type(5) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateX(90deg) translateZ(25px);
+        height: 50px; }
+      body > a > div div:nth-of-type(6) {
+        background: rgba(100, 100, 100, 0.5);
+        transform: rotateX(-90deg) translateZ(75px);
+        height: 50px; }
+  body > section, body > section div {
     overflow: hidden;
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0; }
-  head:target + body > section div {
-    background-image: radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
+  body > section div {
+    background-image: radial-gradient(3px 3px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 90px 40px, #ff4e2a, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
     background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: zoom 2s;
+    background-size: 100px 100px;
+    animation: zoom 2s 2;
     opacity: 0; }
-    head:target + body > section div:nth-child(1) {
+    body > section div:nth-child(1) {
       background-position: 50% 50%;
       animation-delay: 0s; }
-    head:target + body > section div:nth-child(2) {
+    body > section div:nth-child(2) {
       background-position: 20% 60%;
       animation-delay: 0.2s; }
-    head:target + body > section div:nth-child(3) {
+    body > section div:nth-child(3) {
       background-position: -20% -30%;
       animation-delay: 0.4s; }
-    head:target + body > section div:nth-child(4) {
+    body > section div:nth-child(4) {
       background-position: 40% -80%;
       animation-delay: 0.6s; }
-    head:target + body > section div:nth-child(5) {
+    body > section div:nth-child(5) {
       background-position: -20% 30%;
       animation-delay: 1s; }
+
+body {
+  background: url("../img/space.jpg");
+  transition: background 3s; }
+
+body main, body > section {
+  display: none; }

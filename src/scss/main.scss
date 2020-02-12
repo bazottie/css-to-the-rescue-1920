@@ -1,15 +1,24 @@
 @import "reset";
 @import "mixins";
 @import "menu";
+@import "start";
 @import "hyperjump";
 
 body {
-  background: url("../img/space.jpg");
+  background: url("/img/space.jpg");
   transition: background 3s ;
 }
 
 body main, body > section {
   display: none;
 }
+//
+// embed { display: none; }
+//#play:active +
+
+
+//html, a {
+//  cursor: url(../img/spaceship.svg) 2 2, auto;
+//}
 
 // I use SASS so that I can nest elements which makes layering the css for different OS settings easier {

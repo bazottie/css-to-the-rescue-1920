@@ -87,19 +87,79 @@ FONTS
 
 @keyframes cubespace {
   to {
-    transform: translateZ(100000px) rotateY(0deg); } }
+    transform: translateZ(100000px) rotateY(3360deg); } }
+
+@keyframes buttonRest {
+  to {
+    transform: translateZ(-100px) rotateY(0deg); } }
+
+@keyframes buttonHover {
+  to {
+    transform: translateZ(20px) rotateY(-33deg); } }
+
+@keyframes backgroundPopup {
+  0% {
+    background: url("/img/popupOrganic.svg") no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: 45vw; }
+  50% {
+    background: url("/img/organicPopupBlue.svg") no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: 45vw; }
+  100% {
+    background: url("/img/organicPopupGreen.svg") no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: 45vw; } }
+
+@keyframes franticMovement {
+  0% {
+    top: 10%;
+    right: 20%; }
+  10% {
+    top: 30%;
+    right: 40%; }
+  20% {
+    top: 45%;
+    right: 10%; }
+  30% {
+    top: 11%;
+    right: 15%; }
+  40% {
+    top: 30%;
+    right: 70%; }
+  50% {
+    top: 70%;
+    right: 40%; }
+  60% {
+    top: 50%;
+    right: 30%; }
+  70% {
+    top: 80%;
+    right: 80%; }
+  80% {
+    top: 25%;
+    right: 35%; }
+  90% {
+    top: 20%;
+    right: 20%; }
+  100% {
+    top: 10%;
+    right: 20%; } }
 
 head:target + body main {
   display: block; }
 
 main {
+  background: url("../img/space.jpg");
   flex-grow: 1;
   overflow: auto;
   z-index: 1;
   animation: 5s flyin ease-out;
   font-family: Hermetic;
-  color: #fff;
-  background-color: #000; }
+  color: #fff; }
   @media (prefers-color-scheme: dark) {
     main {
       font-family: Roboto; } }
@@ -162,8 +222,62 @@ main {
         display: inline-block;
         width: 100%; }
 
+body > article {
+  position: fixed;
+  width: 100%;
+  height: 100%; }
+  body > article > section {
+    position: relative;
+    color: #fff;
+    width: 40vw;
+    height: 45vw;
+    background: url("/img/popupOrganic.svg") no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease-out; }
+    body > article > section::after {
+      color: #fff;
+      position: absolute;
+      content: 'X';
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      top: 10%;
+      right: 20%;
+      text-align: right; }
+    body > article > section:hover {
+      animation: backgroundPopup 0.5s infinite ease-in-out; }
+      body > article > section:hover::after {
+        animation: franticMovement 2s infinite ease-in-out; }
+  body > article div {
+    height: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: 3em; }
+    body > article div button {
+      max-width: 50px; }
+
+@media (inverted-colors: inverted) {
+  body > article {
+    display: none; } }
+
+embed {
+  display: none;
+  opacity: 0;
+  position: absolute; }
+
+head:target + body embed {
+  display: block; }
+
 head:target + body > section {
   display: block; }
+  head:target + body > section a > div, head:target + body > section {
+    cursor: url(../img/spaceship.svg) 2 2, auto; }
 
 head:target + body > a > div {
   transition: 5s;
@@ -171,7 +285,6 @@ head:target + body > a > div {
 
 body {
   perspective: 1000px;
-  background-color: #000;
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -189,14 +302,17 @@ body {
     transition: 0.3s ease-in-out;
     perspective: 950px; }
     body > a:hover > div {
-      transform: translateZ(20px); }
+      transform: translateZ(20px) rotateY(33deg);
+      animation: buttonHover infinite 1s alternate ease-in-out;
+      animation-delay: 0.5s; }
     body > a > div {
+      will-change: transform;
+      transition: all 0.5s ease-in-out;
+      transform: translateZ(-100px) rotateY(0deg);
       width: 200px;
       height: 100px;
       position: relative;
-      transform-style: preserve-3d;
-      transition: transform 1s;
-      transform: translateZ(-100px) rotateY(0deg); }
+      transform-style: preserve-3d; }
       body > a > div div {
         position: absolute;
         width: 200px;
@@ -246,7 +362,7 @@ body {
     background-image: radial-gradient(3px 3px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 90px 40px, #ff4e2a, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
     background-repeat: repeat;
     background-size: 100px 100px;
-    animation: zoom 2s 2;
+    animation: zoom 1s 4 linear;
     opacity: 0; }
     body > section div:nth-child(1) {
       background-position: 50% 50%;
@@ -265,7 +381,7 @@ body {
       animation-delay: 1s; }
 
 body {
-  background: url("../img/space.jpg");
+  background: url("/img/space.jpg");
   transition: background 3s; }
 
 body main, body > section {

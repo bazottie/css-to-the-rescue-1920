@@ -4,6 +4,8 @@ VARIABLES
 
 $dark: #000;
 $light: #fff;
+$normal: #000;
+$inverted: #fff;
 
 /*********************
 BREAKPOINTS
@@ -34,10 +36,17 @@ BREAKPOINTS
     @media (prefers-color-scheme: dark) {
       @content ;
     }
-  }
-  @else if $point == light {
+  } @else if $point == light {
     @media (prefers-color-scheme: light) {
       @content ;
+    }
+  } @else if $point == invertedColors {
+    @media (inverted-colors: inverted) {
+      @content;
+    }
+  } @else if $point == normalColors {
+    @media (inverted-colors: none) {
+      @content;
     }
   }
 }
@@ -61,9 +70,15 @@ FONTS
 }
 
 @keyframes flyin {
-  0% { transform: translate3d(0, 0, -600000px); }
-  50% { transform: translate3d(0, 0, -600000px); }
-  100%   { transform: translate3d(0, 0, 0); }
+  0% {
+    transform: translate3d(0, 0, -600000px);
+  }
+  50% {
+    transform: translate3d(0, 0, -600000px);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 
@@ -86,6 +101,80 @@ FONTS
 
 @keyframes cubespace {
   to {
-    transform: translateZ(100000px) rotateY(   0deg);
+    transform: translateZ(100000px) rotateY(3360deg);
   }
+}
+
+@keyframes buttonRest {
+  to {
+    transform: translateZ(-100px) rotateY(0deg);
+  }
+}
+
+@keyframes buttonHover {
+  to {
+    transform: translateZ(20px) rotateY(-33deg);
+  }
+}
+
+@keyframes backgroundPopup {
+  0% {
+    background: url("/img/popupOrganic.svg")no-repeat;
+    background-size: contain;
+
+    width: 40vw;
+    height: 45vw;
+  }
+  50% {
+    background: url("/img/organicPopupBlue.svg")no-repeat;
+    background-size: contain;
+
+    width: 40vw;
+    height: 45vw;
+  }
+  100% {
+    background: url("/img/organicPopupGreen.svg")no-repeat;
+    background-size: contain;
+    width: 40vw;
+    height: 45vw;
+  }
+}
+
+@keyframes franticMovement {
+  0% {
+    top: 10%;
+    right: 20%;
+  }10% {
+    top: 30%;
+    right: 40%;
+  }20% {
+    top: 45%;
+    right: 10%;
+  }30% {
+    top: 11%;
+    right: 15%;
+  }40% {
+    top: 30%;
+    right: 70%;
+  }50% {
+    top: 70%;
+    right: 40%;
+  }60% {
+    top: 50%;
+    right: 30%;
+  }70% {
+    top: 80%;
+    right: 80%;
+  }80% {
+    top: 25%;
+    right: 35%;
+  }90% {
+    top: 20%;
+    right: 20%;
+  }100% {
+     top: 10%;
+     right: 20%;
+   }
+
+
 }

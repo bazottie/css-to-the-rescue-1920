@@ -1,0 +1,58 @@
+body > article {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  > section {
+    position: relative;
+    color: $light;
+    width: 40vw;
+    height: 45vw;
+    background: url("/img/popupOrganic.svg") no-repeat;
+    background-size: contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s ease-out;
+
+    &::after {
+      color: #fff;
+      position: absolute;
+      content: 'X';
+      z-index: 2;
+      width: 20px;
+      height: 20px;
+      top: 10%;
+      right: 20%;
+      text-align: right;
+    }
+
+    &:hover {
+      animation: backgroundPopup 0.5s infinite ease-in-out;
+
+      &::after {
+        animation: franticMovement 2s infinite ease-in-out;
+      }
+    }
+  }
+
+  div {
+    height: 70%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: 3em;
+
+    button {
+      max-width: 50px;
+    }
+  }
+}
+
+@include breakpoint(invertedColors) {
+  body > article {
+    display: none;
+  }
+}

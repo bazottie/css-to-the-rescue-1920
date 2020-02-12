@@ -11,7 +11,9 @@ export default {
     },
     plugins: [
         scss ( {
-                output: 'docs/css/styles.css',
+            output: 'docs/css/styles.css',
+            dependencies: ['docs/css/styles/hyperjump.scss',
+            'docs/css/styles/menu.scss', 'docs/css/styles/mixins.scss', 'docs/css/styles/resets.scss']
             }
         ),
         serve ( 'docs' )

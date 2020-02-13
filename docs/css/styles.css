@@ -277,7 +277,7 @@ head:target + body embed {
 head:target + body > section {
   display: block; }
   head:target + body > section a > div, head:target + body > section {
-    cursor: url(../img/spaceship.svg) 2 2, auto; }
+    cursor: url(../img/svg/tieback.svg) 2 2, auto; }
 
 head:target + body > a > div {
   transition: 5s;
@@ -379,6 +379,27 @@ body {
     body > section div:nth-child(5) {
       background-position: -20% 30%;
       animation-delay: 1s; }
+    body > section div:nth-child(6) {
+      position: relative;
+      opacity: 1;
+      animation: none;
+      width: 100vw;
+      height: 33.33vh;
+      cursor: url(../img/svg/tiebott.svg) 2 2, auto; }
+    body > section div:nth-child(7) {
+      position: relative;
+      opacity: 1;
+      animation: none;
+      width: 100vw;
+      height: 33.33vh;
+      cursor: url(../img/svg/tieback.svg) 2 2, auto; }
+    body > section div:nth-child(8) {
+      position: relative;
+      opacity: 1;
+      animation: none;
+      width: 100vw;
+      height: 33.33vh;
+      cursor: url(../img/svg/tietop.svg) 2 2, auto; }
 
 body {
   background: url("/img/space.jpg");

@@ -13,7 +13,7 @@ head:target + body {
     display: block;
 
     a > div, & {
-      cursor: url(../img/spaceship.svg) 2 2, auto;
+      cursor: url(../img/svg/tieback.svg) 2 2, auto;
     }
   }
 
@@ -165,6 +165,34 @@ body {
       &:nth-child(5) {
         background-position: -20% 30%;
         animation-delay: 1s;
+      }
+      &:nth-child(6){
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 100vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tiebott.svg) 2 2, auto;
+
+
+      }
+      &:nth-child(7){
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 100vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tieback.svg) 2 2, auto;
+
+      }
+      &:nth-child(8){
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 100vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tietop.svg) 2 2, auto;
+
       }
     }
   }

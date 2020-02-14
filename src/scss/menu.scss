@@ -1,22 +1,29 @@
 head:target + body main {
   display: block;
+
+  section {
+    animation: turnFirstSection 5s ease-in-out 6s;
+  }
 }
 
 main {
-  background: url("../img/space.jpg");
+  position: relative;
+  //background: url("../img/space.jpg");
   flex-grow: 1;
   overflow: auto;
-  z-index: 1;
-  animation: 5s flyin ease-out;
   font-family: Hermetic;
   color: $light;
+  perspective: 600px;
   @include breakpoint(dark) {
     font-family: Roboto;
   }
 
   > header {
+    transform: translate3d(0, 0, 2000px);
     height: 100vh;
-
+    z-index: 3;
+    animation: 6s flyin;
+    animation-timing-function: cubic-bezier(1, .95, .05, .96);
   }
 
   header {
@@ -53,6 +60,7 @@ main {
       }
     }
   }
+
   section {
     border-radius: 50px;
     display: grid;
@@ -61,34 +69,38 @@ main {
     margin: 0 3em 5em;
     padding: 2em 2em 4em 2em;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6;
+    position: absolute;
+    top: 0;
+    transform: translateZ(-1000px) rotateY(-80deg) translateZ(-10000px);
+    transition: 2s ease;
+  }
 
-    h3 {
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+  h3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
 
-    article {
-      display: grid;
-      grid-template-rows: 1.5fr 1fr;
-      grid-template-columns: 5fr 1fr;
-      grid-gap: 0 2em;
-      margin: 0 2em;
-      place-self: center stretch;
-    }
+  article {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 0 2em;
+    margin: 0 2em;
+    place-self: center stretch;
+  }
 
-    header, blockquote {
-      text-align: center;
-      display: grid;
-      justify-content: center;
-      justify-items: stretch;
-      place-self: center stretch;
-      grid-gap: 0.5em;
-      grid-template-columns: 1fr;
+  header, blockquote {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: stretch;
+    place-self: center stretch;
+    grid-gap: 0.5em;
+    grid-template-columns: 1fr;
 
-      p {
-        display: inline-block;
-        width: 100%;
-      }
+    p {
+      display: inline-block;
+      width: 100%;
     }
   }
 }

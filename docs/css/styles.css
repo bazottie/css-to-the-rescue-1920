@@ -67,10 +67,8 @@ FONTS
 @keyframes flyin {
   0% {
     transform: translate3d(0, 0, -600000px); }
-  50% {
-    transform: translate3d(0, 0, -600000px); }
   100% {
-    transform: translate3d(0, 0, 0); } }
+    transform: translate3d(0, 0, 1000px); } }
 
 @keyframes zoom {
   0% {
@@ -149,22 +147,35 @@ FONTS
     top: 10%;
     right: 20%; } }
 
+@keyframes turnFirstSection {
+  0% {
+    transform: translateX(2000px) translateZ(-3000px) rotateY(-118deg); }
+  50% {
+    transform: translateX(0) translateZ(-1500px) rotateY(0deg); }
+  100% {
+    transform: translateX(0) translateZ(1000px) rotateY(0deg); } }
+
 head:target + body main {
   display: block; }
+  head:target + body main section {
+    animation: turnFirstSection 5s ease-in-out 6s; }
 
 main {
-  background: url("../img/space.jpg");
+  position: relative;
   flex-grow: 1;
   overflow: auto;
-  z-index: 1;
-  animation: 5s flyin ease-out;
   font-family: Hermetic;
-  color: #fff; }
+  color: #fff;
+  perspective: 600px; }
   @media (prefers-color-scheme: dark) {
     main {
       font-family: Roboto; } }
   main > header {
-    height: 100vh; }
+    transform: translate3d(0, 0, 2000px);
+    height: 100vh;
+    z-index: 3;
+    animation: 6s flyin;
+    animation-timing-function: cubic-bezier(1, 0.95, 0.05, 0.96); }
   main header {
     display: flex;
     flex-direction: column;
@@ -199,28 +210,32 @@ main {
     grid-gap: 3em;
     margin: 0 3em 5em;
     padding: 2em 2em 4em 2em;
-    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6; }
-    main section h3 {
-      grid-column-start: 1;
-      grid-column-end: 3; }
-    main section article {
-      display: grid;
-      grid-template-rows: 1.5fr 1fr;
-      grid-template-columns: 5fr 1fr;
-      grid-gap: 0 2em;
-      margin: 0 2em;
-      place-self: center stretch; }
-    main section header, main section blockquote {
-      text-align: center;
-      display: grid;
-      justify-content: center;
-      justify-items: stretch;
-      place-self: center stretch;
-      grid-gap: 0.5em;
-      grid-template-columns: 1fr; }
-      main section header p, main section blockquote p {
-        display: inline-block;
-        width: 100%; }
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6;
+    position: absolute;
+    top: 0;
+    transform: translateZ(-1000px) rotateY(-80deg) translateZ(-10000px);
+    transition: 2s ease; }
+  main h3 {
+    grid-column-start: 1;
+    grid-column-end: 3; }
+  main article {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 0 2em;
+    margin: 0 2em;
+    place-self: center stretch; }
+  main header, main blockquote {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    justify-items: stretch;
+    place-self: center stretch;
+    grid-gap: 0.5em;
+    grid-template-columns: 1fr; }
+    main header p, main blockquote p {
+      display: inline-block;
+      width: 100%; }
 
 body > article {
   position: fixed;
@@ -276,8 +291,6 @@ head:target + body embed {
 
 head:target + body > section {
   display: block; }
-  head:target + body > section a > div, head:target + body > section {
-    cursor: url(../img/svg/tieback.svg) 2 2, auto; }
 
 head:target + body > a > div {
   transition: 5s;
@@ -358,48 +371,95 @@ body {
     bottom: 0;
     left: 0;
     right: 0; }
-  body > section div {
+  body > section > div {
     background-image: radial-gradient(3px 3px at 20px 30px, #eee, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 40px 70px, #fff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #ddd, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 90px 40px, #ff4e2a, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 130px 80px, #fff, rgba(0, 0, 0, 0)), radial-gradient(3px 3px at 160px 120px, #ddd, rgba(0, 0, 0, 0));
     background-repeat: repeat;
     background-size: 100px 100px;
-    animation: zoom 1s 4 linear;
+    animation: zoom 1s infinite linear;
     opacity: 0; }
-    body > section div:nth-child(1) {
+    body > section > div:nth-child(1) {
       background-position: 50% 50%;
       animation-delay: 0s; }
-    body > section div:nth-child(2) {
+    body > section > div:nth-child(2) {
       background-position: 20% 60%;
       animation-delay: 0.2s; }
-    body > section div:nth-child(3) {
+    body > section > div:nth-child(3) {
       background-position: -20% -30%;
       animation-delay: 0.4s; }
-    body > section div:nth-child(4) {
+    body > section > div:nth-child(4) {
       background-position: 40% -80%;
       animation-delay: 0.6s; }
-    body > section div:nth-child(5) {
+    body > section > div:nth-child(5) {
       background-position: -20% 30%;
       animation-delay: 1s; }
-    body > section div:nth-child(6) {
-      position: relative;
-      opacity: 1;
-      animation: none;
-      width: 100vw;
-      height: 33.33vh;
-      cursor: url(../img/svg/tiebott.svg) 2 2, auto; }
-    body > section div:nth-child(7) {
-      position: relative;
-      opacity: 1;
-      animation: none;
-      width: 100vw;
-      height: 33.33vh;
-      cursor: url(../img/svg/tieback.svg) 2 2, auto; }
-    body > section div:nth-child(8) {
-      position: relative;
-      opacity: 1;
-      animation: none;
-      width: 100vw;
-      height: 33.33vh;
-      cursor: url(../img/svg/tietop.svg) 2 2, auto; }
+  body > section section {
+    display: flex;
+    flex-wrap: wrap; }
+    body > section section div {
+      z-index: 2; }
+      body > section section div:nth-child(1) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tierightbott.svg) 2 2, auto; }
+      body > section section div:nth-child(2) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tiebott.svg) 2 2, auto; }
+      body > section section div:nth-child(3) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tieleftbott.svg) 2 2, auto; }
+      body > section section div:nth-child(4) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tieright.svg) 2 2, auto; }
+      body > section section div:nth-child(5) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tieback.svg) 2 2, auto; }
+      body > section section div:nth-child(6) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tieleft.svg) 2 2, auto; }
+      body > section section div:nth-child(7) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tierighttop.svg) 2 28, auto; }
+      body > section section div:nth-child(8) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tietop.svg) 2 28, auto; }
+      body > section section div:nth-child(9) {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        width: 33.33vw;
+        height: 33.33vh;
+        cursor: url(../img/svg/tielefttop.svg) 2 28, auto; }
 
 body {
   background: url("/img/space.jpg");

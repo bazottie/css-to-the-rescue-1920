@@ -19,8 +19,9 @@ head:target + body {
   }
 
   > a > div {
-    transition: 5s;
+    transition: 10s;
     animation: cubespace ease-in 20s;
+    opacity: 0;
   }
 }
 
@@ -169,7 +170,8 @@ body {
       }
     }
 
-      section {
+
+    section {
         display: flex;
         flex-wrap: wrap;
         div {
@@ -181,7 +183,7 @@ body {
             animation: none;
             width: 33.33vw;
             height: 33.33vh;
-            cursor: url(./img/SVG/tierightbott.svg) 2 2, auto;
+            cursor: url(../img/SVG/tierightbott.svg) 2 2, auto;
           }
 
           &:nth-child(2) {
@@ -190,7 +192,7 @@ body {
             animation: none;
             width: 33.33vw;
             height: 33.33vh;
-            cursor: url(./img/SVG/tiebott.svg) 2 2, auto;
+            cursor: url(../img/SVG/tiebott.svg) 2 2, auto;
 
           }
 

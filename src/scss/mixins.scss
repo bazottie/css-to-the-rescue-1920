@@ -116,8 +116,13 @@ FONTS
 }
 
 @keyframes cubespace {
-  to {
+  99% {
     transform: translateZ(100000px) rotateY(3360deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateZ(100000px) rotateY(3360deg);
+    opacity: 0;
   }
 }
 

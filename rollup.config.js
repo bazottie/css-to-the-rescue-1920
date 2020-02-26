@@ -12,7 +12,7 @@ export default {
     plugins: [
         scss ( {
             output: 'docs/css/styles.css',
-            dependencies: ['docs/css/styles/hyperjump.scss',
+            dependencies: ['docs/css/styles/warpdrive.scss',
             'docs/css/styles/menu.scss', 'docs/css/styles/mixins.scss', 'docs/css/styles/resets.scss']
             }
         ),

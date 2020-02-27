@@ -1,6 +1,11 @@
 [Live Demo](https://aaraar.github.io/css-to-the-rescue-1920)
 ![Screenshot](./documentation/screenshot.png)
 # The restaurant at the end of the universe
+![pure css](https://badgen.net/badge/icon/pure-css/orange?icon=awesome&label)
+![progressive enhanced](https://badgen.net/badge/icon/progessive-enhanced/pink?icon=bitcoin-lightning&label)
+![progressive enhanced](https://badgen.net/badge/icon/chrome/yellow?icon=chrome&label)
+
+
 ## Table of contents
 - [Description](#a-cosmic-journey-that-pisses-off-multiple-sci-fi-fanbases)
 - [How to install](#how-to-install)
@@ -10,6 +15,9 @@
 - [Checklist](#checklist)
 
 ## A cosmic journey that pisses off multiple Sci-fi fanbases 
+![startrek](https://badgen.net/badge/star/trek/green)
+![starwars](https://badgen.net/badge/star/wars/purple)
+![douglas adams](https://badgen.net/badge/douglas/adams/blue)
 
 In three weeks I create an innovative, experimental, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
 The  goal is to create a cosmic journey to the restaurant at the end of the universe, experimenting with media queries for color (dark/light), language settings, reduced motion etc.

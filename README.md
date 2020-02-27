@@ -1,7 +1,57 @@
 [Live Demo](https://aaraar.github.io/css-to-the-rescue-1920)
-# CSS to the Rescue @cmda-minor-web 19-20
+![Screenshot](./documentation/screenshot.png)
+# The restaurant at the end of the universe
+##Table of contents
+- [Description](#a-cosmic-journey-that-pisses-off-multiple-sci-fi-fanbases)
+- [How to install](#how-to-install)
+    + [Requirements](#requirements)
+    + [Step by step](#step-by-step)
+- [How to use](#how-to-use)
+- [Checklist](#checklist)
+
+## A cosmic journey that pisses off multiple Sci-fi fanbases 
 
 In three weeks I create an innovative, experimental, yet pleasurable user experience by using CSS and SVG. No Javascrpt allowed.
+The  goal is to create a cosmic journey to the restaurant at the end of the universe, experimenting with media queries for color (dark/light), language settings, reduced motion etc.
+
+## How to install
+### Requirements
+- Node
+- Yarn
+
+# Step by step
+1. Clone the project
+2. Open terminal and navigate to the directory
+3. Run `yarn`
+4. Run `yarn dev`
+5. Open a browser and navigate to [localhost:10001](http://localhost:10001)
+#### Or go straight to [aaraar.github.io/css-to-the-rescue-1920](https://aaraar.github.io/css-to-the-rescue-1920)
+
+## How to use
+The journey has several layers to display the menu.
+When opening the site in light-mode (OS or browser setting) there will be all kinds of pop-ups blocking you from using the site.
+![Popups](./documentation/lightmode.png)
+These pop-ups will be in an alien language, however they contain the crucial hint to continue. Either change the HTML lang from '👽' to 'en' to read it or copy and paste it somewhere else.
+When the OS or browser is in darkmode, these pop-ups disappear and you can use the warpdrive (Star Trek reference in a D. Adams Joke? Yes!)
+![Warpdrive](./documentation/warpdrive.png)
+Click it and a Tie fighter will appear and flies through space (EVEN STAR WARS JOKES!!?? YES!!)
+You will fly to the restaurant at the end of the universe and the menu portions will fly by.
+![Tiefighter](./documentation/menu.png)
+Did not get a chance to read it?
+Maybe try flying with a reduced motion (hint)
+![No motion](./documentation/reduced.png)
+
+## Checklist
+- [x] Fly through space
+- [x] Moving menu parts
+- [x] Menu layout with grid
+- [x] Cursor simulates spaceship
+- [x] Alien language on light mode
+- [X] Reduced motion menu
+- [x] Pop-ups
+- [ ] Hold menu parts when flying through
+- [ ] Interactivity
+- [ ] Dynamic menu layout
 
 ## Learning goals
 - _Understanding the broader scope of CSS: You can show that CSS can be used for more than just styling web pages._
@@ -9,13 +59,6 @@ In three weeks I create an innovative, experimental, yet pleasurable user experi
 - _Understanding the interactive parts of CSS: Is the UX fully enhanced within in given CSS scope?_
 - _Stretching the learning goals as far as possible_
 
-## Programm
-
-Probeer de uitleg van switchen van OS settings uit te leggen en gebruik de tool misschien als demonstratie hiervoor
-
-### Week 1 - 👁 C what you did there
-
-[See all the details of week 1 here](week1/).
 
 Goals of this week: 
 

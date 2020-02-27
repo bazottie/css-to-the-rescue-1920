@@ -5,12 +5,21 @@
 @import "warpdrive";
 
 body {
-  background: url("../img/space.jpg");
-  transition: background 3s ;
+  background: $dark url("../img/space.jpg");
+  transition: background 3s;
+  font-family: Hermetic;
+
+  &:lang(en) {
+    //breakpoint(dark) {
+    font-family: Roboto, sans-serif;
+    //}
+  }
 }
 
-body main, body > section {
-  display: none;
+@include breakpoint(no-reduced) {
+  body main, body > section {
+    display: none;
+  }
 }
 //
 // embed { display: none; }

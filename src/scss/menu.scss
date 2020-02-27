@@ -1,8 +1,55 @@
-head:target + body main {
-  display: block;
+@include breakpoint(no-reduced) {
+  head:target + body main {
+    display: block;
+    z-index: 4;
 
-  section {
-    animation: turnFirstSection 5s ease-in-out 6s;
+    section:nth-of-type(1) {
+      animation: turnFirstSection 5s ease-in-out 6s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
+
+    section:nth-of-type(2) {
+      animation: turnFirstSection 5s ease-in-out 11s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
+
+    section:nth-of-type(3) {
+      animation: turnFirstSection 5s ease-in-out 16s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
+
+    section:nth-of-type(4) {
+      animation: turnFirstSection 5s ease-in-out 21s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
+
+    section:nth-of-type(5) {
+      animation: turnFirstSection 5s ease-in-out 26s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
+
+    section:nth-of-type(6) {
+      animation: turnFirstSection 5s ease-in-out 31s;
+
+      &:hover, &:hover ~ section {
+        animation-play-state: paused;
+      }
+    }
   }
 }
 
@@ -11,19 +58,95 @@ main {
   //background: url("../img/space.jpg");
   flex-grow: 1;
   overflow: auto;
-  font-family: Hermetic;
   color: $light;
   perspective: 600px;
-  @include breakpoint(dark) {
-    font-family: Roboto;
+
+  &:lang(en) {
+    font-family: Roboto, sans-serif;
   }
 
-  > header {
-    transform: translate3d(0, 0, 2000px);
-    height: 100vh;
-    z-index: 3;
-    animation: 6s flyin;
-    animation-timing-function: cubic-bezier(1, .95, .05, .96);
+  > div {
+    display: grid;
+    grid-template-areas: "noshes" "noshes" "noshes" "boards" "platters" "eggs" "eggs" "sides" "sweet" "sweet";
+    @media (min-width: 1000px) {
+      grid-template-areas: "noshes boards" "noshes platters" "eggs sweet" "eggs sweet" "sides sides";
+    }
+    @media (min-width: 2000px) {
+      grid-template-areas: "noshes boards eggs" "noshes platters eggs" "sweet sides sides" "sweet . ."
+    }
+    @media (min-width: 3000px) {
+      grid-template-areas: "noshes platters boards eggs" "noshes sides sides eggs" ". sweet sweet ."
+    }
+    @media (min-width: 4000px) {
+      grid-template-areas: "noshes platters boards eggs sweet" "noshes sides sides eggs sweet"
+    }
+
+    section:nth-of-type(1) {
+      grid-area: noshes;
+    }
+
+    section:nth-of-type(2) {
+      grid-area: boards;
+    }
+
+    section:nth-of-type(3) {
+      grid-area: platters;
+    }
+
+    section:nth-of-type(4) {
+      grid-area: eggs;
+    }
+
+    section:nth-of-type(5) {
+      grid-area: sides;
+
+      > article {
+        display: grid;
+        grid-template-areas: "soup" "salad";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        @include breakpoint(medium) {
+          grid-template-rows: 1fr;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "soup salad";
+        }
+
+        section {
+          margin: 0;
+          padding: 0 0 1.2em;
+          box-shadow: none;
+
+          header h2 {
+            font-weight: 400;
+          }
+
+          &:nth-of-type(1) {
+            grid-area: soup;
+          }
+
+          &:nth-of-type(2) {
+            grid-area: salad;
+          }
+        }
+      }
+    }
+
+    section:nth-of-type(6) {
+      grid-area: sweet;
+    }
+  }
+
+  //@include breakpoint(dark) {
+  //  font-family: Roboto, serif;
+  //}
+  @include breakpoint(no-reduced) {
+    > header {
+      transform: translate3d(0, 0, 2000px);
+      height: 100vh;
+      z-index: 3;
+      animation: 6s flyin;
+      animation-timing-function: cubic-bezier(1, .95, .05, .96);
+    }
   }
 
   header {
@@ -69,10 +192,12 @@ main {
     margin: 0 3em 5em;
     padding: 2em 2em 4em 2em;
     box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #3ce3e6, 0 0 40px #3ce3e6, 0 0 50px #3ce3e6, 0 0 60px #3ce3e6, 0 0 70px #3ce3e6;
-    position: absolute;
     top: 0;
-    transform: translateZ(-1000px) rotateY(-80deg) translateZ(-10000px);
-    transition: 2s ease;
+    @include breakpoint(no-reduced) {
+      position: absolute;
+      transform: translateZ(-1000px) rotateY(-80deg) translateZ(-10000px);
+      transition: 2s ease;
+    }
   }
 
   h3 {
@@ -104,3 +229,4 @@ main {
     }
   }
 }
+

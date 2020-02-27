@@ -1,7 +1,7 @@
 [Live Demo](https://aaraar.github.io/css-to-the-rescue-1920)
 ![Screenshot](./documentation/screenshot.png)
 # The restaurant at the end of the universe
-##Table of contents
+## Table of contents
 - [Description](#a-cosmic-journey-that-pisses-off-multiple-sci-fi-fanbases)
 - [How to install](#how-to-install)
     + [Requirements](#requirements)
@@ -70,17 +70,6 @@ Goals of this week:
 
 <!-- [Slides](https://drive.google.com/open?id=1Rjl9xqXoKniQSRJPdkU1O5YwWC33SJK8KiV0a-H_xZU) -->
 
-### Week 2 - Create Stuff, 🙃 Smile 
-
-This week’s goals: Moar inspiration, create stuff, break stuff, and learn from each other.
-
-<!-- [Opdrachten](https://drive.google.com/open?id=1GMDTdW3LycAYpZSFI6gk_lrKrx8-zLWrNh69aaVEH5Y) -->
-
-<!-- [Slides](https://drive.google.com/open?id=1IqQeu1m0dQiSC_KCvrn8eencAgtYe7X6qT-gm0n9Bmc) -->
-
-### Week 3 - 🎪 Show time
-
-Goals: Blow us away.
 
 <!-- [Opdrachten](https://drive.google.com/open?id=13pKQu72pshaEzKw9q5JHLa-aop85nMP6nDCdqioWjoQ) -->
 

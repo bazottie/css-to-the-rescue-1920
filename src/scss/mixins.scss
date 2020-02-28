@@ -48,13 +48,11 @@ BREAKPOINTS
     @media (inverted-colors: none) {
       @content;
     }
-  }
-  @else if $point == reduced {
+  } @else if $point == reduced {
     @media (prefers-reduced-motion: reduce) {
       @content
     }
-  }
-  @else if $point == no-reduced {
+  } @else if $point == no-reduced {
     @media (prefers-reduced-motion: no-preference) {
       @content
     }
@@ -151,21 +149,21 @@ FONTS
 
 @keyframes backgroundPopup {
   0% {
-    background: url("../img/popupOrganic.svg")no-repeat;
+    background: url("../img/popupOrganic.svg") no-repeat;
     background-size: contain;
 
     width: 40vw;
     height: 45vw;
   }
   50% {
-    background: url("../img/organicPopupBlue.svg")no-repeat;
+    background: url("../img/organicPopupBlue.svg") no-repeat;
     background-size: contain;
 
     width: 40vw;
     height: 45vw;
   }
   100% {
-    background: url("../img/organicPopupGreen.svg")no-repeat;
+    background: url("../img/organicPopupGreen.svg") no-repeat;
     background-size: contain;
     width: 40vw;
     height: 45vw;
@@ -176,42 +174,72 @@ FONTS
   0% {
     top: 10%;
     right: 20%;
-  }10% {
+  }
+  10% {
     top: 30%;
     right: 40%;
-  }20% {
+  }
+  20% {
     top: 45%;
     right: 10%;
-  }30% {
+  }
+  30% {
     top: 11%;
     right: 15%;
-  }40% {
+  }
+  40% {
     top: 30%;
     right: 70%;
-  }50% {
+  }
+  50% {
     top: 70%;
     right: 40%;
-  }60% {
+  }
+  60% {
     top: 50%;
     right: 30%;
-  }70% {
+  }
+  70% {
     top: 80%;
     right: 80%;
-  }80% {
+  }
+  80% {
     top: 25%;
     right: 35%;
-  }90% {
+  }
+  90% {
     top: 20%;
     right: 20%;
-  }100% {
-     top: 10%;
-     right: 20%;
-   }
+  }
+  100% {
+    top: 10%;
+    right: 20%;
+  }
 }
 
 @keyframes turnFirstSection {
   0% {
     transform: translateX(2000px) translateZ(-3000px) rotateY(-118deg);
+  }
+  50% {
+    transform: translateX(0) translateZ(-1500px) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(0) translateZ(1000px) rotateY(0deg);
+  }
+}@keyframes turnSecondSection {
+  0% {
+    transform: translateX(-2000px) translateZ(-3000px) rotateY(1222deg);
+  }
+  50% {
+    transform: translateX(0) translateZ(-1500px) rotateY(0deg);
+  }
+  100% {
+    transform: translateX(0) translateZ(1000px) rotateY(0deg);
+  }
+}@keyframes turnFourthSection {
+  0% {
+    transform: translateX(2000px) translateZ(500px) rotateY(118deg);
   }
   50% {
     transform: translateX(0) translateZ(-1500px) rotateY(0deg);

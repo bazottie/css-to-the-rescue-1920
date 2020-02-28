@@ -16,7 +16,7 @@
     }
 
     section:nth-of-type(2) {
-      animation: turnFirstSection 5s ease-in-out 11s;
+      animation: turnSecondSection 5s ease-in-out 11s;
 
       &:hover, &:hover ~ section {
         animation-play-state: paused;
@@ -32,7 +32,7 @@
     }
 
     section:nth-of-type(4) {
-      animation: turnFirstSection 5s ease-in-out 21s;
+      animation: turnFourthSection 5s ease-in-out 21s;
 
       &:hover, &:hover ~ section {
         animation-play-state: paused;
@@ -48,8 +48,8 @@
     }
 
     section:nth-of-type(6) {
-      animation: turnFirstSection 5s ease-in-out 31s;
-
+      animation: 6s flyin 31s;
+      animation-timing-function: cubic-bezier(1, .95, .05, .96);
       &:hover, &:hover ~ section {
         animation-play-state: paused;
       }

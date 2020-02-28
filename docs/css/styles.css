@@ -168,8 +168,7 @@ FONTS
 
 @media (prefers-reduced-motion: no-preference) {
   head:target + body main {
-    display: block;
-    z-index: 4; }
+    display: block; }
     head:target + body main section:nth-of-type(1) {
       animation: turnFirstSection 5s ease-in-out 6s; }
       head:target + body main section:nth-of-type(1):hover, head:target + body main section:nth-of-type(1):hover ~ section {

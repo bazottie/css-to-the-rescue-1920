@@ -1,7 +1,11 @@
 @include breakpoint(no-reduced) {
   head:target + body main {
     display: block;
-    //z-index: 4;
+    z-index: 1;
+    cursor: url(../img/SVG/tieback.svg) 2 2, auto;
+    section {
+      //cursor: url(../img/SVG/tieback.svg) 2 2, auto;
+    }
 
     section:nth-of-type(1) {
       animation: turnFirstSection 5s ease-in-out 6s;

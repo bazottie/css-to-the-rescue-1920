@@ -227,6 +227,7 @@ body > a {
           &:nth-child(5) {
             position: relative;
             opacity: 1;
+            z-index: 0;
             animation: none;
             width: 33.33vw;
             height: 33.33vh;

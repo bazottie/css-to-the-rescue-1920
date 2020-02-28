@@ -48,7 +48,6 @@ You will fly to the restaurant at the end of the universe and the menu portions 
 Did not get a chance to read it?
 Maybe try flying with a reduced motion (hint)
 ![No motion](./documentation/reduced.png)
-__The flying through the menus is supposed to be interactive where you can stop the menus when flying in front of it, but this doesn't work together with the spaceship cursor so it's one or the other__
 
 ## Checklist
 - [x] Fly through space
@@ -58,7 +57,7 @@ __The flying through the menus is supposed to be interactive where you can stop 
 - [x] Alien language on light mode
 - [X] Reduced motion menu
 - [x] Pop-ups
-- [ ] Interactive Menu in conjunction with the spaceship
+- [x] Interactive Menu in conjunction with the spaceship
 - [ ] Hold menu parts when flying through
 - [ ] Interactivity
 - [ ] Dynamic menu layout
